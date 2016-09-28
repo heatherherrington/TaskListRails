@@ -1,0 +1,20 @@
+<h1>Here is the task you have selected!</h1>
+
+<h2> Title:
+  <%= @tasks[@id.to_i][:task] %>
+</h2>
+
+<p>
+  Description:
+  <%= @tasks[@id.to_i][:description] %>
+</p>
+
+<p>
+  Completion status:
+  <%= @tasks[@id.to_i][:completion_status] %>
+</p>
+
+<p>
+  Completion due date:
+  <%= @tasks[@id.to_i][:completion_date] %>
+</p>

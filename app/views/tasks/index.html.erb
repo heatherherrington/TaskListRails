@@ -1,0 +1,8 @@
+<h1>Hello! Welcome to the Task List!</h1>
+
+<ul>
+  <% @tasks.each_with_index do |task, index| %>
+    <% @index = index.to_s %>
+    <li><%= link_to(task[:task], '/tasks/' + @index ) %></li>
+  <% end %>
+</ul>

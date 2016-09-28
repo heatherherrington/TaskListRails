@@ -1,8 +1,12 @@
 <h1>Hello! Welcome to the Task List!</h1>
 
-<ul>
-  <% @tasks.each_with_index do |task, index| %>
-    <% @index = index.to_s %>
-    <li><%= link_to(task[:task], '/tasks/' + @index ) %></li>
-  <% end %>
-</ul>
+<% @tasks.each do |t| %>
+  <p>
+    <%= "Task: #{ t.name }" %>
+    <%= link_to "Find more info here", task_path(t) %>
+  </p>
+<% end %>
+
+<p>
+  Would you like to add a new task? If so, <%= link_to "click here", tasks_new_path %>
+</p>

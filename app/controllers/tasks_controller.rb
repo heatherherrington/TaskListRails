@@ -1,37 +1,16 @@
 class TasksController < ApplicationController
   def index
-    @id = params[:id]
-    @tasks = [
-      {
-        task: "Grocery shopping",
-        description: "fruit, bread, turkey",
-        completion_status: "incomplete",
-        completion_date: "Sept 27, 2016"
-      },
-      {
-        task: "Laundry",
-        description: "darks",
-        completion_status: "in-progress",
-        completion_date: "Sept 30, 2016"
-      }
-    ]
+    @tasks = Task.all
   end
 
   def show
-    @id = params[:id]
-    @tasks = [
-      {
-        task: "Grocery shopping",
-        description: "fruit, bread, turkey",
-        completion_status: "incomplete",
-        completion_date: "Sept 27, 2016"
-      },
-      {
-        task: "Laundry",
-        description: "darks",
-        completion_status: "in-progress",
-        completion_date: "Sept 30, 2016"
-      }
-    ]
+    @task = Task.find(params[:id])
+  end
+
+  def new; end
+
+  def create
+    # Here is where we would save to the database
+    redirect_to tasks_path
   end
 end

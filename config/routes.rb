@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   patch 'tasks/:id' => 'tasks#update'
 
   get 'tasks/:id/delete_confirm', to: 'tasks#delete_confirm', as: 'task_delete_confirm'
-
   delete 'tasks/:id' => 'tasks#delete'
 
   get '/tasks/:id', to: 'tasks#show', as: 'task'

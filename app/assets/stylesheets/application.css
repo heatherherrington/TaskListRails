@@ -18,20 +18,30 @@
    font: normal normal 14px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
  }
 
+ body {
+   padding-left: 20px;
+   padding-right: 20px;
+ }
+
  .task_header {
-   margin-top: 0px;
+   margin-top: 0;
    margin-bottom: 5px;
+ }
+
+ .all_tasks {
+   max-width: 90%;
  }
 
  .task_list {
    width: 25%;
    float: left;
-   border: blue 1px solid;
+   border: green 2px dotted;
    padding: 10px;
    margin: 10px;
  }
 
  footer {
    clear: both;
-   margin-top: 100px;
+   padding-top: 30px;
+   padding-left: 30px;
  }

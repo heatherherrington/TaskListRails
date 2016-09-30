@@ -20,13 +20,8 @@ class TasksController < ApplicationController
     end
   end
 
-  def delete_confirm
-    @task = Task.find(params[:id])
-  end
-
-  def delete
-    @task = Task.find(params[:id])
-    @task.destroy
+  def destroy
+    @task = Task.find(params[:id]).destroy
     redirect_to root_path
   end
 

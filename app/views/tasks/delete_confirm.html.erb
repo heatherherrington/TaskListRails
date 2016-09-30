@@ -1,7 +1,0 @@
-<h2><%= @task.name %></h2>
-<%= form_for @task, method: :delete do |f| %>
-  <p>Are you sure you want to delete this task?</p>
-  <%= f.submit "Delete" %>
-<% end %>
-
-<%= link_to("Back to the Tasks", tasks_path) %>

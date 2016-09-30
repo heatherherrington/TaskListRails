@@ -5,8 +5,7 @@
     <%= "Task: #{ t.name }" %>
     <%= link_to "Find more info here", task_path(t) %>
     <%= link_to "Edit", task_edit_path(t) %>
-    <%= link_to "Delete", task_delete_confirm_path(t) %>
-    <%= button_to "Done!" %>
+    <%= link_to "Destroy", task_path(t), method: :delete, data: { confirm: "Are you really sure?" } %>
   </p>
 <% end %>
 

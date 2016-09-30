@@ -14,24 +14,32 @@
  *= require_self
  */
 
+/*All pages*/
+/*Default font information for entire document*/
  html {
    font: normal normal 14px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
  }
 
+/*Force document to not extend to borders of browser*/
  body {
    padding-left: 20px;
    padding-right: 20px;
  }
 
+
+/*Index page*/
+/*Specify how much space is between name of task and edit/destroy options*/
  .task_header {
    margin-top: 0;
    margin-bottom: 5px;
  }
 
+/*Decrease total width of grid of tasks*/
  .all_tasks {
    max-width: 90%;
  }
 
+/*Formatting for task grid*/
  .task_list {
    width: 25%;
    float: left;
@@ -40,7 +48,14 @@
    margin: 10px;
  }
 
- .new_task {
+/*Lower section with completed tasks for better readability*/
+ .finished_tasks {
+   clear: both;
+   padding-top: 30px;
+ }
+
+/*Lower link to add a new task for better readability*/
+ .create_new_task {
    clear: both;
    padding-top: 30px;
    padding-left: 30px;

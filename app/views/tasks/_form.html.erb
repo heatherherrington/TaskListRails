@@ -1,18 +1,18 @@
 <h1>Please enter or update your task!</h1>
 
 <%= form_for @task do |f| %>
-  <%= f.label :name %>
+  <%= f.label "Task name" %>
   <%= f.text_field :name %>
   <p>
     <%= f.label :description %>
     <%= f.text_field :description %>
   </p>
   <p>
-    <%= f.label :is_completed %>
+    <%= f.label "Check if completed" %>
     <%= f.check_box :is_completed %>
   </p>
   <p>
-    <%= f.label :completed_at %>
+    <%= f.label "Completed on" %>
     <%= f.date_field :completed_at %>
   </p>
   <%= f.submit %>

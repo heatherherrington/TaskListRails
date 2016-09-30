@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+   font: normal normal 14px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+
+ .task_header {
+   margin-top: 0px;
+   margin-bottom: 5px;
+ }
+
+ .task_list {
+   width: 25%;
+   float: left;
+   border: blue 1px solid;
+   padding: 10px;
+   margin: 10px;
+ }
+
+ footer {
+   clear: both;
+   margin-top: 100px;
+ }

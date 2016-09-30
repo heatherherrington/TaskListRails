@@ -6,6 +6,11 @@
     <%= link_to "Find more info here", task_path(t) %>
     <%= link_to "Edit", task_edit_path(t) %>
     <%= link_to "Destroy", task_path(t), method: :delete, data: { confirm: "Are you really sure?" } %>
+    <%= form_for t do |f| %>
+      <%= f.hidden_field :is_completed, :value=>true %>
+      <%= f.hidden_field :completed_at, :value=>Time.now %>
+      <%= f.submit "Task is complete" %>
+    <% end %>
   </p>
 <% end %>
 

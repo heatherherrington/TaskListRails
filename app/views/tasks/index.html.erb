@@ -6,7 +6,7 @@
     <% if t.is_completed == false %>
       <div class="task_list">
         <h2 class="task_header"><%= link_to "#{ t.name }", task_path(t) %></h2>
-        <%= link_to "Edit", task_edit_path(t) %>
+        <%= link_to "Edit", edit_task_path(t) %>
         <br />
         <%= link_to "Delete", task_path(t), method: :delete, data: { confirm: "Are you really sure?" } %>
         <%= form_for t do |f| %>
@@ -22,7 +22,7 @@
     <% if t.is_completed == true %>
       <div class="task_list">
         <h2 class="task_header"><%= link_to "#{ t.name }", task_path(t) %></h2>
-        <%= link_to "Edit", task_edit_path(t) %>
+        <%= link_to "Edit", edit_task_path(t) %>
         <br />
         <%= link_to "Delete", task_path(t), method: :delete, data: { confirm: "Are you really sure?" } %>
       </div>
@@ -31,5 +31,5 @@
 </div>
 
 <p class="create_new_task">
-  Would you like to add a new task? If so, <%= link_to "click here", tasks_new_path %>
+  Would you like to add a new task? If so, <%= link_to "click here", new_task_path %>
 </p>

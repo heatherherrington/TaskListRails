@@ -8,7 +8,13 @@
 </head>
 <body>
   <header>
-    <%= button_to "Log out", sessions_path, method: :delete %>
+    <div id="navbar">
+      <% if current_user %>
+        <%= button_to "Log out", sessions_path, method: :delete %>
+      <% else %>
+        <%= button_to "Log in", sessions_login_path, method: :post %>
+      <% end %>
+    </div>
   </header>
 
 <%= yield %>

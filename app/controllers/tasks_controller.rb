@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   skip_before_action :require_login, only: [:welcome, :create]
+  before_action :edit_or_update, only: [:edit, :update, :show]
 
   def welcome
     if !session[:user_id].blank?
@@ -15,15 +16,7 @@ class TasksController < ApplicationController
     # @incomplete_tasks = @tasks.incomplete_tasks
   end
 
-  def show
-    requested_task = Task.find(params[:id])
-
-    if requested_task.user_id == current_user.id
-      @task = current_user.tasks.find(params[:id])
-    else
-      redirect_to :unauth_req
-    end
-  end
+  def show; end
 
   def new
     @task = current_user.tasks.new
@@ -44,29 +37,23 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
-  def edit  # Will give the form, like new
-    requested_task = Task.find(params[:id])
+  def edit; end
 
-    if requested_task.user_id == current_user.id
-      @task = current_user.tasks.find(params[:id])
-    else
-      redirect_to :unauth_req and return
-    end
-  end
-
-  def update # Actually do the update, like create
-    requested_task = Task.find(params[:id])
-
-    if requested_task.user_id == current_user.id
-      @task = current_user.tasks.find(params[:id])
-    else
-      redirect_to :unauth_req and return
-    end
-  end
+  def update; end
 
   private
 
   def task_params
     params.require(:task).permit(:name, :description, :is_completed, :completed_at)
+  end
+
+  def edit_update_show
+    requested_task = Task.find(params[:id])
+
+    if requested_task.user_id == current_user.id
+      @task = current_user.tasks.find(params[:id])
+    else
+      redirect_to :unauth_req and return
+    end
   end
 end

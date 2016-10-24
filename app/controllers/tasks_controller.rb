@@ -4,25 +4,35 @@ class TasksController < ApplicationController
   def welcome
     if !session[:user_id].blank?
       redirect_to :tasks and return
+    else
+      render :welcome
     end
   end
 
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks
+    @complete_tasks = @tasks.complete_tasks
+    @incomplete_tasks = @tasks.incomplete_tasks
   end
 
   def show
-    @task = Task.find(params[:id])
+    requested_task = Task.find(params[:id])
+
+    if requested_task.user_id == current_user.id
+      @task = current_user.tasks.find(params[:id])
+    else
+      redirect_to :unauth_req
+    end
   end
 
   def new
-    @task = Task.new
+    @task = current_user.tasks.new
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.new(task_params)
     if @task.save
-      redirect_to root_path
+      redirect_to tasks_path
     else
       render :new
     end
@@ -31,19 +41,26 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to root_path
+    redirect_to tasks_path
   end
 
   def edit  # Will give the form, like new
-    @task = Task.find(params[:id])
+    requested_task = Task.find(params[:id])
+
+    if requested_task.user_id == current_user.id
+      @task = current_user.tasks.find(params[:id])
+    else
+      redirect_to :unauth_req and return
+    end
   end
 
   def update # Actually do the update, like create
-    @task = Task.find(params[:id])
-    if @task.update(task_params)
-      redirect_to root_path
+    requested_task = Task.find(params[:id])
+
+    if requested_task.user_id == current_user.id
+      @task = current_user.tasks.find(params[:id])
     else
-      render :edit
+      redirect_to :unauth_req and return
     end
   end
 

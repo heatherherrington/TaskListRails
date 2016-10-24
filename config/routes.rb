@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'tasks#welcome'
+
+  get 'tasks/unauthorized', to: 'tasks#unauthorized_request', as: :unauth_req
   resources :tasks
 
 

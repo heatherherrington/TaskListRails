@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :tasks
   validates :uid, presence: true, uniqueness: { scope: :provider, message: "Cannot have multiple users from the same provider with the same User ID"}
   validates :provider, presence: true
   validates :email, presence: true

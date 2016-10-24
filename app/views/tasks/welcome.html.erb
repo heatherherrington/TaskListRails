@@ -1,0 +1,7 @@
+<% if flash[:logged_out] %>
+  <p>
+    <%= flash[:logged_out] %>
+  </p>
+
+<h1>Welcome to Task List</h1>
+<%= button_to "Please log in via Github", 'auth/github' %>

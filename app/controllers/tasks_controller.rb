@@ -11,8 +11,8 @@ class TasksController < ApplicationController
 
   def index
     @tasks = current_user.tasks
-    @complete_tasks = @tasks.complete_tasks
-    @incomplete_tasks = @tasks.incomplete_tasks
+    # @complete_tasks = @tasks.complete_tasks
+    # @incomplete_tasks = @tasks.incomplete_tasks
   end
 
   def show

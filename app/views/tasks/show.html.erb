@@ -2,20 +2,24 @@
 
 <h2><%= @task.name %></h2>
 
-<p>
-  Description:
-  <%= @task.description %>
-</p>
+<section>
+  <p>
+    Description:
+    <%= @task.description %>
+  </p>
 
-<p>
-  Completion status:
-  <%= @task.is_completed %>
-</p>
+  <p>
+    Completion status:
+    <%= @task.is_completed %>
+  </p>
 
-<p>
-  Completion date:
-  <%= @task.completed_at %>
-</p>
+  <p>
+    Completion date:
+    <%= @task.completed_at %>
+  </p>
+</section>
 
-<%= link_to "Edit task", edit_task_path(@task) %>
-<p><%= link_to "Return back to the list", tasks_path %></p>
+<section>
+  <%= link_to "Edit task", edit_task_path(@task) %>
+  <p><%= link_to "Return back to the list", tasks_path %></p>
+</section>

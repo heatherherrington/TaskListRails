@@ -16,6 +16,8 @@
 
 /*All pages*/
 /*Default font information for entire document*/
+@import url('foundation.css');
+
  html {
    font: normal normal 14px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
  }
@@ -25,6 +27,30 @@
    padding-left: 20px;
    padding-right: 20px;
  }
+
+ /*Header formatting*/
+ .title-area {
+   text-align: center;
+ }
+
+.logout-button {
+  background-color: red;
+}
+
+.new-task-button {
+  background-color: green;
+}
+
+.logout-button, .new-task-button {
+  border-radius: 45px;
+  color: white;
+  font-weight: bold;
+}
+
+/*Footer formatting*/
+footer {
+  margin-top: 100px;
+}
 
 
 /*Index page*/

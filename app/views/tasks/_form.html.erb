@@ -1,6 +1,6 @@
 <h1>Please enter or update your task!</h1>
 
-<%= form_for @task do |f| %>
+<%= form_for @task, html:{class:"custom"} do |f| %>
   <%= f.label "Task name" %>
   <%= f.text_field :name %>
   <p>

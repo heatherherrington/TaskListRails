@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   skip_before_action :require_login, only: [:welcome, :create]
-  before_action :edit_or_update, only: [:edit, :update, :show]
+  before_action :edit_update_show, only: [:edit, :update, :show]
 
   def welcome
     if !session[:user_id].blank?

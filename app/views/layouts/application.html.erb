@@ -7,20 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <div id="navbar">
-      <% if current_user %>
-        <%= button_to "Log out", sessions_path, method: :delete, data: { confirm: "Are you sure you want to log out?" } %>
-      <% else %>
-        <%= button_to "Log in with Github", '/auth/github', method: :post %>
-      <% end %>
-      <% if current_user %>
-        <%= button_to "Add New Task", new_task_path %>
-      <% end %>
-    </div>
+  <header class="top-bar">
+    <h1 class="title-area">Task List</h1>
+    <nav class="top-bar-section">
+      <ul class="menu top-bar-right">
+        <% if current_user %>
+          <li><%= button_to "Log out", sessions_path, method: :delete, data: { confirm: "Are you sure you want to log out?" }, class: "logout-button" %></li>
+        <% else %>
+          <li><%= button_to "Log in with Github", '/auth/github', method: :post %></li>
+        <% end %>
+        <% if current_user %>
+          <li><%= button_to "Add New Task", new_task_path, class: "new-task-button" %></li>
+        <% end %>
+    </ul>
   </header>
 
 <%= yield %>
+
+  <footer>
+    <h6>&copy; <%= Time.now.year %> Heather Herrington</h6>
+  </footer>
 
 </body>
 </html>

@@ -13,13 +13,13 @@ This project...
   - create a controller for your `Tasks`
   - conform to Rails conventions on naming and inflection
 
-  <!--- 
+
   Baseline Part 2:
   - create a `Task` model a migration.
     - create the database schema and tables with `rake db:migrate`
-    - the `Task` model should include _at least_ a name, a description and a completion indicator-->
+    - the `Task` model should include _at least_ a name, a description and a completion indicator
     
-<!-- Tinker with your Model in the `rails console` in order to ensure you have created your model and can interact with it as expected. 
+Tinker with your Model in the `rails console` in order to ensure you have created your model and can interact with it as expected. 
 
 ## Task Data Requirements
 
@@ -38,7 +38,6 @@ This wave is where we will introduce the view layer to interact with our applica
   - The `show` view should include the complete information about the task: name, description, completion status, and completion date.
 - All markup in all views should have semantic relevance.
   
-<!--
 ## 🌊 Wave 2
 In this wave we will add the first set of user interactivity and persistence.
 
@@ -64,5 +63,3 @@ In this wave we will extend the interactivity with users, allowing them to edit 
   - Link to the `edit` action from the task's `show` page.
   - DRY up your code by reusing the view code from the `new` functionality
     - Hint: Rendering _partials_ in Rails.
-
--->
